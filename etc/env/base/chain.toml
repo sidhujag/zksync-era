@@ -91,8 +91,8 @@ validation_computational_gas_limit = 300000
 save_call_traces = true
 
 bootloader_hash = "0x0100087b232b86e32e87f8acfb75c98a50363eb7ccbe504aae3f7b7e8dd94dbf"
-default_aa_hash = "0x01000503285b02130b8fc5d7bd876650285a4224988605ee8171cf48f2856f1a"
-evm_emulator_hash = "0x01000dcdf3a70d93ce630d6607b87e6ca013819bb2b67cfd2d544c31c21dcce7"
+default_aa_hash = "0x0100050989d91484a0d994fab1527c01f1f5fa39c9993945ae943874c4667e7d"
+evm_emulator_hash = "0x01000cb5ab96098493fa599effb19ce9c6d8db6e9bfe34004ce3ff35e2225a75"
 
 protective_reads_persistence_enabled = false
 
