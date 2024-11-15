@@ -802,7 +802,7 @@ version = "0.150.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "76be9ee6e75f1f948d175ab9820ecc7189f72154c95ca503a1974012356f5363"
 dependencies = [
- "circuit_encodings 0.150.7",
+ "circuit_encodings 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "crossbeam",
  "derivative",
  "seq-macro",
@@ -854,8 +854,19 @@ checksum = "2501cc688ef391013019495ae7035cfd54f86987e36d10f73976ce4c5d413c5a"
 dependencies = [
  "derivative",
  "serde",
- "zk_evm 0.150.7",
- "zkevm_circuits 0.150.7",
+ "zk_evm 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "zkevm_circuits 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "circuit_encodings"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "derivative",
+ "serde",
+ "zk_evm 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
+ "zkevm_circuits 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
 ]
 
 [[package]]
@@ -919,7 +930,19 @@ version = "0.150.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "917d27db531fdd98a51e42ea465bc097f48cc849e7fad68d7856087d15125be1"
 dependencies = [
- "circuit_encodings 0.150.7",
+ "circuit_encodings 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "derivative",
+ "rayon",
+ "serde",
+ "zksync_bellman",
+]
+
+[[package]]
+name = "circuit_sequencer_api"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "circuit_encodings 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
  "derivative",
  "rayon",
  "serde",
@@ -7858,7 +7881,21 @@ dependencies = [
  "serde",
  "serde_json",
  "static_assertions",
- "zk_evm_abstractions 0.150.7",
+ "zk_evm_abstractions 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "zk_evm"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "anyhow",
+ "lazy_static",
+ "num",
+ "serde",
+ "serde_json",
+ "static_assertions",
+ "zk_evm_abstractions 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
 ]
 
 [[package]]
@@ -7897,7 +7934,19 @@ dependencies = [
  "num_enum 0.6.1",
  "serde",
  "static_assertions",
- "zkevm_opcode_defs 0.150.7",
+ "zkevm_opcode_defs 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "zk_evm_abstractions"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "anyhow",
+ "num_enum 0.6.1",
+ "serde",
+ "static_assertions",
+ "zkevm_opcode_defs 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
 ]
 
 [[package]]
@@ -7917,7 +7966,7 @@ dependencies = [
  "smallvec",
  "structopt",
  "thiserror",
- "zkevm_opcode_defs 0.150.7",
+ "zkevm_opcode_defs 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -7980,7 +8029,26 @@ dependencies = [
  "seq-macro",
  "serde",
  "smallvec",
- "zkevm_opcode_defs 0.150.7",
+ "zkevm_opcode_defs 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "zksync_cs_derive",
+]
+
+[[package]]
+name = "zkevm_circuits"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "arrayvec 0.7.4",
+ "boojum",
+ "derivative",
+ "hex",
+ "itertools 0.10.5",
+ "rand 0.4.6",
+ "rand 0.8.5",
+ "seq-macro",
+ "serde",
+ "smallvec",
+ "zkevm_opcode_defs 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
  "zksync_cs_derive",
 ]
 
@@ -8044,6 +8112,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "zkevm_opcode_defs"
+version = "0.150.7"
+source = "git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend#32d07c1d522165952535f8d86b74a75eb67fb125"
+dependencies = [
+ "bitflags 2.6.0",
+ "blake2 0.10.6",
+ "ethereum-types",
+ "k256 0.13.3",
+ "lazy_static",
+ "p256",
+ "serde",
+ "sha2 0.10.8",
+ "sha3 0.10.8",
+]
+
+[[package]]
 name = "zkevm_test_harness"
 version = "0.150.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8051,7 +8135,7 @@ checksum = "d9c801aa17e9009699aacf654588d6adfaeeb8a490b2d9121847c201e2766803"
 dependencies = [
  "bincode",
  "circuit_definitions",
- "circuit_sequencer_api 0.150.7",
+ "circuit_sequencer_api 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "codegen",
  "crossbeam",
  "derivative",
@@ -8504,7 +8588,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_with",
- "zkevm_circuits 0.150.7",
+ "zkevm_circuits 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -8540,7 +8624,7 @@ dependencies = [
  "circuit_sequencer_api 0.140.3",
  "circuit_sequencer_api 0.141.2",
  "circuit_sequencer_api 0.142.2",
- "circuit_sequencer_api 0.150.7",
+ "circuit_sequencer_api 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
  "ethabi",
  "hex",
  "itertools 0.10.5",
@@ -8552,7 +8636,7 @@ dependencies = [
  "zk_evm 0.133.0",
  "zk_evm 0.140.0",
  "zk_evm 0.141.0",
- "zk_evm 0.150.7",
+ "zk_evm 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
  "zksync_contracts",
  "zksync_mini_merkle_tree",
  "zksync_system_constants",
@@ -8828,7 +8912,7 @@ name = "zksync_prover_interface"
 version = "0.1.0"
 dependencies = [
  "chrono",
- "circuit_sequencer_api 0.150.7",
+ "circuit_sequencer_api 0.150.7 (git+https://github.com/matter-labs/zksync-protocol?branch=vv-remove-evm-stipend)",
  "serde",
  "serde_with",
  "strum",
@@ -9031,8 +9115,8 @@ source = "git+https://github.com/matter-labs/vm2.git?rev=457d8a7eea9093af9440662
 dependencies = [
  "enum_dispatch",
  "primitive-types",
- "zk_evm_abstractions 0.150.7",
- "zkevm_opcode_defs 0.150.7",
+ "zk_evm_abstractions 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "zkevm_opcode_defs 0.150.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "zksync_vm2_interface",
 ]
 
