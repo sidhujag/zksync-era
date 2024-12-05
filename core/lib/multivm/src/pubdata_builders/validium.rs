@@ -39,8 +39,13 @@ impl PubdataBuilder for ValidiumPubdataBuilder {
         );
 
         let mut pubdata = vec![];
-        pubdata.extend(encode_user_logs(&input.user_logs));
+        extend_from_pubdata_input(&mut pubdata, input);
 
+        // Extend with uncompressed state diffs.
+        pubdata.extend((input.state_diffs.len() as u32).to_be_bytes());
+        for state_diff in &input.state_diffs {
+            pubdata.extend(state_diff.encode_padded());
+        }
         let chained_log_hash = build_chained_log_hash(&input.user_logs);
         let log_root_hash =
             build_logs_root(&input.user_logs, l2_to_l1_logs_tree_size(protocol_version));
