@@ -1,6 +1,21 @@
 eth:
   sender:
     pubdata_sending_mode: CUSTOM
+    proof_sending_mode: ONLY_REAL_PROOFS
+  zksync_network_id: 580
 state_keeper:
   pubdata_overhead_part: 0
   compute_overhead_part: 1
+  l1_pubdata_price: 1400
+  max_pubdata_per_batch: 2097152
+  transaction_slots: 8192
+  fee_account_addr: "0xde03a0B5963f75f1C8485B355fF6D30f3093BDE7"
+  fee_model_version: "V2"
+  minimal_l2_gas_price: 100000000
+  batch_overhead_l1_gas: 800000
+  max_gas_per_batch: 200000000
+  validation_computational_gas_limit: 300000
+  max_single_tx_gas: 7500000
+
+
+
